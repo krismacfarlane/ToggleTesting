@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ToggleTest!</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <style type="text/css">
+  	.hide {
+    	display:none;
+	}
+  </style>
+</head>
+<body>
+ 
+
+<nav>
+    <a href="#shelters">Shelters</a> ||
+    <a href="#health-risks">Health Risks</a>
+</nav>
+
+<br>
+<br>
+
+<div id="main" class="hide">
+    <div id="shelters">
+        <iframe width="900" height="800" frameborder="0" scrolling="no" id="plotly" src="https://plot.ly/~krismacfarlane/21.embed"></iframe>
+    </div> <!-- FAMILIES/CHILDREN LIVING IN SHELTERS -->
+    <div id="health-risks">
+        <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~krismacfarlane/26.embed"></iframe>
+    </div> <!-- HEALTH RISKS -->
+
+</div> <!-- main -->
+ 
+<script>
+
+$('body').on('click','nav a', function(e) {
+    $('#main').removeClass('hide');
+    $('#main').children().addClass('hide');
+    $($(this).attr('href')).removeClass('hide');
+    e.preventDefault();
+});
+</script>
+ 
+</body>
+</html>
